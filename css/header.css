@@ -1,0 +1,17 @@
+#header {
+    width: 100%;
+    color: var(--secondary);
+    justify-content: space-between;
+
+    img {
+        margin: 5px;
+        border-radius: 5%;
+        height: 10vh;
+    }
+
+    div h1 {
+        align-self: end;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}

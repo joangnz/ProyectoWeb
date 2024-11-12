@@ -1,0 +1,17 @@
+#footer {
+    min-height: 10vh;
+    padding: 20px 0;
+    background-color: var(--secondary);
+    width: 100%;
+    color: white;
+    justify-self: flex-end;
+
+
+    .flex {
+        justify-content: space-around;
+    }
+
+    ul li {
+        display: block;
+    }
+}
