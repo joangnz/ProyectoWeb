@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+setcookie("user_role", "admin", time() + (86400 * 30), "/");
 
 ?>
 <!DOCTYPE html>
