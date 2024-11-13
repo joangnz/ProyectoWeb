@@ -2,6 +2,30 @@
 session_start();
 setcookie("user_role", "admin", time() + (86400 * 30), "/");
 
+function readCookie()
+{
+    if (isset($_COOKIE['user_role'])) {
+        echo "Rol de usuario: " . $_COOKIE['user_role'];
+    } else {
+        echo "No se ha configurado un rol de usuario.";
+    }
+}
+
+function removeCookie()
+{
+    setcookie("user_role", "", time() - 3600, "/");
+}
+
+function readSession()
+{
+    return "User:" . $_SESSION['user'];
+}
+function closeSession()
+{
+    session_unset();
+    session_destroy();
+}
+
 ?>
 <!DOCTYPE html>
 
