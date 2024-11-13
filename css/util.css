@@ -6,13 +6,13 @@
     --secondary: #40382e;
     --secondary-filter: invert(16%) sepia(25%) saturate(535%) hue-rotate(354deg) brightness(93%) contrast(81%);
     --contrast: #e4e275;
-    --contrast-filter: invert(72%) sepia(9%) saturate(2383%) hue-rotate(66deg) brightness(91%) contrast(80%);
     --contrast2: #dbd995;
 }
 
 * {
     margin: 0;
     box-sizing: border-box;
+    color: var(--secondary);
 }
 
 html {
@@ -36,6 +36,11 @@ body {
 
 .col {
     flex-direction: column !important;
+}
+
+.grid {
+    display: flex;
+    width: 100%;
 }
 
 .hide {

@@ -34,3 +34,44 @@
         margin: 5px 0;
     }
 }
+
+#users-grid {
+    grid-template: repeat(autofill, 20px) / 1fr 1fr 1fr 2fr;
+
+    grid-template-areas:
+        "head head head head"
+        "user user user user user";
+
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        grid-area: "user";
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        font-size: 1.5rem;
+    }
+
+    td {
+        font-size: 1.3rem;
+    }
+
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
