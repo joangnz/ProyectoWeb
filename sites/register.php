@@ -5,13 +5,17 @@ session_start();
 $userFailed = false;
 $loggedIn = false;
 
-// if (isset($_SESSION['username'])) {
-//     header("location: main.php");
-// }
+if (isset($_SESSION['username'])) {
+    header("location: main.php");
+}
+function readUsers()
+{
+    $users = json_decode(file_get_contents("../data/users.json"), true) ?? [];
+    return $users;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $json_data = file_get_contents('../data/users.json');
-    $users = json_decode($json_data, true) ?? [];
+    $users = readUsers();
 
     $id = uniqid();
     $username = htmlspecialchars($_POST['username']);
