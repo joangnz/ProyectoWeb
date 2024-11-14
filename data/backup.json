@@ -1,0 +1,14 @@
+[
+    {
+        "id": "0",
+        "user": "joangnx",
+        "password": "joangnx",
+        "role": "admin"
+    },
+    {
+        "id": "1",
+        "user": "joangnz",
+        "password": "joangnz",
+        "role": "user"
+    }
+]

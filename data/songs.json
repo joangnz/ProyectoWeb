@@ -1,0 +1,200 @@
+[
+    {
+        "title": "Helena",
+        "src": "../media/sound/helena.mp3",
+        "author": "My Chemical Romance",
+        "album": "Three Cheers for Sweet Revenge",
+        "img": "../media/img/three-cheers-for-sweet-revenge.pnge",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "And I Love Her",
+        "src": "../media/sound/and-i-love-her.mp3",
+        "author": "Kurt Cobain",
+        "album": "Montage of Heck",
+        "img": "../media/img/montage-of-a-heck.png",
+        "lyrics": "",
+        "description": "Version of The Beatles' 'And I Love Her' by Nirvana lead singer Kurt Cobain"
+    },
+    {
+        "title": "Papercut",
+        "src": "../media/sound/papercut.mp3",
+        "author": "Linkin Park",
+        "album": "Hybrid Theory",
+        "img": "../media/img/hybrid-theory.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Everlong",
+        "src": "../media/sound/everlong.mp3",
+        "author": "Foo Fighters",
+        "album": "The Colour and The Shape",
+        "img": "../media/img/the-colour-and-the-shape.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Vaig Aprendre",
+        "src": "../media/sound/vaig-aprendre.mp3",
+        "author": "Manu Guix",
+        "album": "El Petit Princep",
+        "img": "../media/img/el-petit-princep.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Stairway to Heaven",
+        "src": "../media/sound/stairway-to-heaven.mp3",
+        "author": "Led Zeppelin",
+        "album": "Led Zeppelin IV",
+        "img": "../media/img/led-zeppelin-iv.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Dance Macabre",
+        "src": "../media/sound/dance-macabre.mp3",
+        "author": "Ghost",
+        "album": "Prequelle",
+        "img": "../media/img/prequelle.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Welcome to the Black Parade",
+        "src": "../media/sound/welcome-to-the-black-parade.mp3",
+        "author": "My Chemical Romance",
+        "album": "The Black Parade",
+        "img": "../media/img/the-black-parade.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Slide",
+        "src": "../media/sound/slide.mp3",
+        "author": "The Goo Goo Dolls",
+        "album": "Dizzy up the Girl",
+        "img": "../media/img/dizzy-up-the-girl.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Aerials",
+        "src": "../media/sound/aerials.mp3",
+        "author": "System of a Down",
+        "album": "Toxicity",
+        "img": "../media/img/toxicity.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Can't Stop",
+        "src": "../media/sound/cant-stop.mp3",
+        "author": "Red Hot Chili Peppers",
+        "album": "Stadium Arcadium",
+        "img": "../media/img/stadium-arcadium.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Freak on a Leash",
+        "src": "../media/sound/freak-on-a-leash.mp3",
+        "author": "Korn",
+        "album": "Follow the Leader",
+        "img": "../media/img/follow-the-leader.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Roundabout",
+        "src": "../media/sound/roundabout.mp3",
+        "author": "Yes",
+        "album": "Fragile",
+        "img": "../media/img/fragile.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "My Will Be Done",
+        "src": "../media/sound/my-will-be-done.mp3",
+        "author": "Powerwolf",
+        "album": "Interludium",
+        "img": "../media/img/interludium.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Army of the Night",
+        "src": "../media/sound/army-of-the-night.mp3",
+        "author": "Powerwolf",
+        "album": "Blessed and Possessed",
+        "img": "../media/img/blessed-and-possessed.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Yggdrasil",
+        "src": "../media/sound/yggdrasil.mp3",
+        "author": "Brothers of Metal",
+        "album": "Prophecy of Ragnarök",
+        "img": "../media/img/prophecy-of-ragnarok.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Fighting Myself",
+        "src": "../media/sound/fighting-myself.mp3",
+        "author": "Linkin Park",
+        "album": "Meteora LOST DEMOS",
+        "img": "../media/img/meteora-lost-demos.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Numb",
+        "src": "../media/sound/numb.mp3",
+        "author": "Linkin Park",
+        "album": "Meteora",
+        "img": "../media/img/meteora.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "I Really Want to Stay at Your Home",
+        "src": "../media/sound/i-really-want-to-stay-at-your-home.mp3",
+        "author": "Rosa Walton, Hallie Coggins",
+        "album": "Cyberpunk 2077: Radio, Vol.2 (Original Soundtrack)",
+        "img": "../media/img/cyberpunk2077-radio-vol2-ost.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Bury the Light",
+        "src": "../media/sound/bury-the-light.mp3",
+        "author": "Casey Edwards",
+        "album": "Bury the Light",
+        "img": "../media/img/bury-the-light.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Nandemonaiya",
+        "src": "../media/sound/nandemonaiya.mp3",
+        "author": "RADWIMPS",
+        "album": "Your Name.",
+        "img": "../media/img/your-name.png",
+        "lyrics": "",
+        "description": ""
+    },
+    {
+        "title": "Hayloft II",
+        "src": "../media/sound/hayloft-ii.mp3",
+        "author": "Mother Mother",
+        "album": "Inside",
+        "img": "../media/img/inside.png",
+        "lyrics": "",
+        "description": ""
+    }
+]
