@@ -1,11 +1,30 @@
 <?php
 session_start();
 
-if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
-    echo "ADMIN";
-} else {
+if ($_SESSION["role"] != "admin") {
     header("location: main.php");
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $users = readUsers();
+
+    try {
+        if (isset($_POST['edit'])) {
+            echo $_POST['edit'] . $_POST['newName'];
+            echo updateUser($_POST['edit'], $_POST['newName']);
+        }
+    } catch (Exception $e) {
+    }
+
+    try {
+        if (isset($_POST['delete'])) {
+            echo deleteUser($_POST['delete']);
+        }
+    } catch (Exception $e) {
+    }
+
+}
+
 
 function readUsers()
 {
@@ -13,22 +32,22 @@ function readUsers()
     return $users;
 }
 
-function updateUser($id, $newName, $newEmail)
+function updateUser($id, $newName)
 {
     $users = readUsers();
 
     $userIndex = array_search($id, array_column($users, 'id'));
     if ($userIndex !== false) {
-        $users[$userIndex]['name'] = $newName;
-        $users[$userIndex]['email'] = $newEmail;
+        if ($users[$userIndex]['role'] !== "admin") {
+            $users[$userIndex]['user'] = $newName;
 
-        file_put_contents('../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
+            file_put_contents('../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
 
-        return "User updated";
+            return "User updated";
+        }
+        return "Cannot edit administrators.";
     }
-
     return "User not found";
-
 }
 
 function deleteUser($id)
@@ -37,12 +56,16 @@ function deleteUser($id)
 
     $userIndex = array_search($id, array_column($users, "id"));
     if ($userIndex !== false) {
-        unset($users[$userIndex]);
-        $users = array_values($users);
+        if ($users[$userIndex]["role"] !== "admin") {
+            unset($users[$userIndex]);
+            $users = array_values($users);
 
-        file_put_contents('../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
+            file_put_contents('../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
 
-        return "User deleted";
+            return "User deleted";
+        }
+
+        return "Cannot delete administrators.";
     }
 
     return "User not found";
@@ -61,6 +84,7 @@ function deleteUser($id)
     <script src="../scripts/jquery.min.js" defer></script>
     <script src="../scripts/template.js" defer></script>
     <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/admin.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -88,8 +112,18 @@ function deleteUser($id)
                         <td><?php echo htmlspecialchars($user['user']) ?></td>
                         <td><?php echo htmlspecialchars($user['role']) ?></td>
                         <td class="actions">
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <form method="POST">
+                                <button class="toggleEdit" type="button" name="edit"
+                                    value="<?php echo $user['id'] ?>">Edit</button>
+                                <div class="hide" class="editForm">
+                                    <label for="newName">New Username</label>
+                                    <input type="text" class="newName" name="newName">
+                                    <button type="submit" value="<?php echo $user['id'] ?>" name="edit">Edit User</button>
+                                </div>
+                            </form>
+                            <form method="POST">
+                                <button type="submit" value="<?php echo $user['id'] ?>" name="delete">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

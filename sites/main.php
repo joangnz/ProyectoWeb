@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["username"])) {
+    header("location: login.php");
+}
+echo "" . $_SESSION["username"] . "";
+
 setcookie("user_role", "admin", time() + (86400 * 30), "/");
 
 function readCookie()
@@ -36,9 +41,11 @@ function closeSession()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Web</title>
     <script src="../scripts/jquery.min.js" defer></script>
+    <script src="../scripts/howler.core.js" defer></script>
     <script src="../scripts/template.js" defer></script>
     <script src="../scripts/script.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/util.css">
@@ -46,10 +53,33 @@ function closeSession()
 </head>
 
 <body>
-    <header id="header"></header>
-    <main id="main" class="flex">
+    <header id="header" class="flex"></header>
+    <main id="main">
+        <div id="container" class="flex">
+            <section class="box flex col" id="playing">
+                <div id="volume-holder">
+                    <input type="range" id="volume" value="65" min="0" max="100" step="1">
+                </div>
+                <div id="banner"></div>
+                <div id="button-holder" class="flex">
+                    <button id="back"></button>
+                    <button id="play"></button>
+                    <button id="pause" class="hide"></button>
+                    <button id="next"></button>
+                </div>
+                <div id="timeline-holder" class="flex">
+                    <span class="timestamp" id="current-time">0:00</span>
+                    <input type="range" id="timeline" value="0" min="0" max="100" step="1">
+                    <span class="timestamp" id="end-time">0:00</span>
+                </div>
+            </section>
+            <section class="box" id="queue-holder">
+                <ul id="queue" class="flex col"></ul>
+            </section>
+        </div>
     </main>
-    <footer id="footer"></footer>
+    <footer id="footer">
+    </footer>
 </body>
 
 </html>
