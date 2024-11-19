@@ -33,23 +33,7 @@ function howlSounds() {
         html5: true,
         onend: () => { nextTrack(); },
         volume: DEFAULTVOLUME,
-        onplay: () => {
-            pauseRadio();
-            setupEqualizer();
-            animateEqualizer();
-        }
     }));
-
-    radios = radiosList.map(radio => new Howl({
-        src: [radio.src],
-        html5: true,
-        volume: DEFAULTVOLUME,
-        onplay: () => {
-            pauseTrack();
-            setupEqualizer();
-            animateEqualizer();
-        }
-    }))
 }
 
 // Function to update the queue UI
@@ -94,16 +78,6 @@ function updatePlaylist() {
 
 function disableTimeline() {
     timeline.setAttribute("disabled");
-}
-
-function playRadio() {
-
-}
-
-function pauseRadio() {
-    let radio = radiosList[currentRadio];
-
-    radio.kill();
 }
 
 function updateTimeline(sound) {
@@ -239,3 +213,64 @@ next.onclick = nextTrack;
 back.onclick = backTrack;
 timeline.oninput = jumpTrack;
 volume.oninput = changeVolume;
+
+
+/* Mood Form */
+let moodForm = document.getElementById("mood-form");
+let showMoods = document.getElementById("toggle-mood-form");
+let moodsLabels = document.querySelectorAll("#mood-form label");
+let inputs = document.querySelectorAll("#mood-form input");
+
+showMoods.addEventListener("click", toggleMoodForm, false);
+
+inputs.forEach(input => {
+    input.addEventListener("click", (e) => {
+        changeMood(e.target.id);
+        changeLabelBackground(e.target);
+    }, false)
+})
+
+function toggleMoodForm() {
+    if (moodForm.classList.contains("hide")) {
+        moodForm.classList.remove("hide");
+        showMoods.innerText = "HIDE MOOD SELECTION"
+    } else {
+        moodForm.classList.add("hide");
+        showMoods.innerText = "SHOW MOOD SELECTION"
+    }
+}
+
+function changeMood(mood) {
+    /* Change the strings that are used when comparing song.title if youo want */
+    const happyIndex = songsList.findIndex(song => song.title.toLowerCase() === "Roundabout".toLowerCase());
+    const sadIndex = songsList.findIndex(song => song.title.toLowerCase() === "I Really Want to Stay at Your House".toLowerCase());
+    const relaxedIndex = songsList.findIndex(song => song.title.toLowerCase() === "Stairway to Heaven".toLowerCase());
+    const angryIndex = songsList.findIndex(song => song.title.toLowerCase() === "Army of the Night".toLowerCase());
+    const inspiredIndex = songsList.findIndex(song => song.title.toLowerCase() === "Can't Stop".toLowerCase());
+
+    let songsMoods = {
+        "happy": happyIndex,
+        "sad": sadIndex,
+        "relaxed": relaxedIndex,
+        "angry": angryIndex,
+        "inspired": inspiredIndex
+    }
+
+
+    if (songsMoods[mood] !== currentTrack) {
+        currentTrack = songsMoods[mood];
+        playTrack();
+    }
+}
+
+function changeLabelBackground(inputElement) {
+    // Reset background for all labels
+    moodsLabels.forEach(label => {
+        label.classList.remove("active");
+    });
+
+    const correspondingLabel = document.querySelector(`label[for="${inputElement.id}"]`);
+    if (correspondingLabel) {
+        correspondingLabel.classList.add("active");
+    }
+}

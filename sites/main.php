@@ -52,7 +52,7 @@ function closeSession()
 
 </head>
 
-<body>
+<body id="main-body">
     <header id="header" class="flex"></header>
     <main id="main">
         <div id="container" class="flex">
@@ -77,6 +77,17 @@ function closeSession()
                 <ul id="queue" class="flex col"></ul>
             </section>
         </div>
+
+        <section id="mood" class="flex col">
+            <button id="toggle-mood-form">SHOW MOOD SELECTION</button>
+            <form id="mood-form" class="hide flex col">
+                <input type="radio" name="mood" id="happy"><label for="happy">Happy</label>
+                <input type="radio" name="mood" id="sad"><label for="sad">Sad</label>
+                <input type="radio" name="mood" id="relaxed"><label for="relaxed">Relaxed</label>
+                <input type="radio" name="mood" id="angry"><label for="angry">Angry</label>
+                <input type="radio" name="mood" id="inspired"><label for="inspired">Inspired</label>
+            </form>
+        </section>
     </main>
     <footer id="footer">
     </footer>

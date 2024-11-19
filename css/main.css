@@ -1,6 +1,5 @@
-#main {
+#main-body #main {
     background-color: var(--bg);
-    height: 60vh;
     flex: 2;
     margin: 0 5%;
 }
@@ -60,25 +59,25 @@
     }
 
     #back {
-        background-image: url('../img/back.png');
+        background-image: url('../media/img/back.png');
         background-size: cover;
         filter: var(--contrast-filter);
     }
 
     #play {
-        background-image: url('../img/play.png');
+        background-image: url('../media/img/play.png');
         background-size: cover;
         filter: var(--contrast-filter);
     }
 
     #pause {
-        background-image: url('../img/pause.png');
+        background-image: url('../media/img/pause.png');
         background-size: cover;
         filter: var(--contrast-filter);
     }
 
     #next {
-        background-image: url('../img/next.png');
+        background-image: url('../media/img/next.png');
         background-size: cover;
         filter: var(--contrast-filter);
     }
@@ -189,4 +188,43 @@
         border-radius: 100%;
         transform: scale(1.5);
     }
+}
+
+#mood {
+    margin: 10px auto;
+
+    #mood-form {
+        margin-top: 10px;
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            text-align: center;
+            width: 100%;
+            margin: 5px;
+            background: linear-gradient(to left, var(--bg) 50%, var(--primary) 50%) right;
+            background-size: 200% 100%;
+        }
+
+        label:hover {
+            background-position: left;
+            transition: all 1s ease;
+        }
+
+        label.active {
+            transition: 1s ease;
+            background-position: left;
+        }
+
+    }
+
+
 }

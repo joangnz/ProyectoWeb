@@ -6,6 +6,7 @@
     --secondary: #40382e;
     --secondary-filter: invert(16%) sepia(25%) saturate(535%) hue-rotate(354deg) brightness(93%) contrast(81%);
     --contrast: #e4e275;
+    --contrast-filter: invert(96%) sepia(74%) saturate(663%) hue-rotate(356deg) brightness(94%) contrast(90%);
     --contrast2: #dbd995;
 }
 

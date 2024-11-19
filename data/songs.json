@@ -4,7 +4,7 @@
         "src": "../media/sound/helena.mp3",
         "author": "My Chemical Romance",
         "album": "Three Cheers for Sweet Revenge",
-        "img": "../media/img/three-cheers-for-sweet-revenge.pnge",
+        "img": "../media/img/three-cheers-for-sweet-revenge.png",
         "lyrics": "",
         "description": ""
     },
@@ -162,8 +162,8 @@
         "description": ""
     },
     {
-        "title": "I Really Want to Stay at Your Home",
-        "src": "../media/sound/i-really-want-to-stay-at-your-home.mp3",
+        "title": "I Really Want to Stay at Your House",
+        "src": "../media/sound/i-really-want-to-stay-at-your-house.mp3",
         "author": "Rosa Walton, Hallie Coggins",
         "album": "Cyberpunk 2077: Radio, Vol.2 (Original Soundtrack)",
         "img": "../media/img/cyberpunk2077-radio-vol2-ost.png",
