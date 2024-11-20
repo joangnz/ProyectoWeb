@@ -10,5 +10,11 @@
         "user": "joangnz",
         "password": "joangnz",
         "role": "user"
+    },
+    {
+        "id": "673e169b0849a",
+        "user": "jiang",
+        "password": "jiang",
+        "role": "user"
     }
 ]

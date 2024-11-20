@@ -93,7 +93,7 @@ function deleteUser($id)
 </head>
 
 <body>
-    <header id="header"></header>
+    <header id="header-main"></header>
     <main id="main" class="flex">
         <table>
             <thead>

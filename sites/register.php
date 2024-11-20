@@ -17,40 +17,43 @@ function readUsers()
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $users = readUsers();
 
-    $id = uniqid();
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
     $loggingUser = [
         'id' => uniqid(),
-        'username' => $username,
+        'user' => $username,
         'password' => $password,
         'role' => 'user'
     ];
 
     foreach ($users as $user) {
-        if (!in_array($loggingUser['username'], $user)) {
-            $userFailed = false;
-
-            $loggedIn = true;
-            $userFailed = false;
-            $_SESSION['username'] = $username;
-
-            $users[] = $loggingUser;
-
-            file_put_contents('../data/users.json', json_encode(
-                $users,
-                JSON_PRETTY_PRINT
-            ));
-            // header("Location: main.php");
-            header('location: main.php');
-        } else {
+        if ($user['user'] === $username) {
+            // El usuario ya existe.
             $userFailed = true;
+            $_SESSION['error'] = 'El nombre de usuario ya está en uso.';
+            header('Location: register.php');
         }
     }
 
     if (!$userFailed) {
+        // Si no existe el usuario, procede a registrarlo.
+        $loggingUser = [
+            'id' => uniqid(),
+            'user' => $username,
+            'password' => $password,
+            'role' => 'user'
+        ];
 
+        // Agrega el nuevo usuario al array de usuarios.
+        $users[] = $loggingUser;
+
+        // Guarda los usuarios de nuevo en el archivo.
+        file_put_contents('../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
+
+        // Establece la sesión y redirige al usuario a la página principal.
+        $_SESSION['username'] = $username;
+        header('Location: main.php');
     }
 }
 ?>
@@ -65,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Proyecto Web - Register</title>
     <script src="../scripts/jquery.min.js" defer></script>
     <script src="../scripts/template.js" defer></script>
-    <script src="../scripts/script.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -74,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <p><?php echo $userFailed ? "Existant" : "Non existant" ?></p>
     <header id="header"></header>
     <main id="main" class="flex">
         <div id="registerCell">

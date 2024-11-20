@@ -71,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Proyecto Web - Login</title>
     <script src="../scripts/jquery.min.js" defer></script>
     <script src="../scripts/template.js" defer></script>
-    <script src="../scripts/script.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -80,9 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <p><?php echo $userFailed ? "Failed" : "Not failed";
-    echo " | ";
-    echo $passwordFailed ? "P Failed" : "P Not failed" ?></p>
     <header id="header"></header>
     <main id="main" class="flex">
         <div id="loginCell">

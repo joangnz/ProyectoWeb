@@ -212,6 +212,7 @@
             margin: 5px;
             background: linear-gradient(to left, var(--bg) 50%, var(--primary) 50%) right;
             background-size: 200% 100%;
+            cursor: pointer;
         }
 
         label:hover {

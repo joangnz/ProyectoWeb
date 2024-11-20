@@ -1,11 +1,17 @@
 <?php
 session_start();
+
 if (!isset($_SESSION["username"])) {
     header("location: login.php");
 }
-echo "" . $_SESSION["username"] . "";
 
 setcookie("user_role", "admin", time() + (86400 * 30), "/");
+
+if (isset($_POST['action']) && $_POST['action'] == 'logout') {
+    closeSession();  // Llamar a la función PHP
+    echo 'logged_out';
+    exit;
+}
 
 function readCookie()
 {
@@ -53,7 +59,7 @@ function closeSession()
 </head>
 
 <body id="main-body">
-    <header id="header" class="flex"></header>
+    <header id="header-main" class="flex"></header>
     <main id="main">
         <div id="container" class="flex">
             <section class="box flex col" id="playing">
