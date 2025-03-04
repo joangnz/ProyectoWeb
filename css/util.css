@@ -16,6 +16,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     background-color: var(--bg);
     font-size: 20px;
     font-family: oxygen, trebuchet ms, Arial, sans-serif;

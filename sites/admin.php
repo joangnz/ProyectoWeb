@@ -83,7 +83,6 @@ function deleteUser($id)
     <title>Proyecto Web - Admin</title>
     <script src="../scripts/jquery.min.js" defer></script>
     <script src="../scripts/template.js" defer></script>
-    <script src="../scripts/script.js" defer></script>
     <script src="../scripts/admin.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">

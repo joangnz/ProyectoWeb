@@ -1,9 +1,7 @@
 
-$('#header-main').load('../sites/templates/header-main.php');
 $('#header').load('../sites/templates/header.html');
 
-$('#footer').load('../sites/templates/footer.html');
-
+$('#header-main').load('../sites/templates/header-main.php');
 $(document).ready(function () {
     // Delegar el evento 'click' en el contenedor del header
     $('#header-main').on('click', '#logout', function (event) {
@@ -26,3 +24,5 @@ $(document).ready(function () {
         });
     });
 });
+
+$('#footer').load('../sites/templates/footer.html');

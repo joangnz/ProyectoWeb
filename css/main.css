@@ -193,7 +193,25 @@
 #mood {
     margin: 10px auto;
 
+    #toggle-mood-form {
+        font-size: 1.25rem;
+        padding: 20px;
+        border-radius: 25px;
+        border-color: transparent;
+        margin-bottom: 5px;
+        background-color: var(--secondary);
+        color: var(--contrast);
+        cursor: pointer;
+    }
+
+    #toggle-mood-form:active {
+        color: white;
+    }
+
     #mood-form {
+        border: 1px solid black;
+        border-radius: 25px;
+        width: 35%;
         margin-top: 10px;
 
         div {
@@ -208,8 +226,9 @@
 
         label {
             text-align: center;
-            width: 100%;
+            width: 40%;
             margin: 5px;
+            padding: 5px 0;
             background: linear-gradient(to left, var(--bg) 50%, var(--primary) 50%) right;
             background-size: 200% 100%;
             cursor: pointer;
@@ -223,6 +242,7 @@
         label.active {
             transition: 1s ease;
             background-position: left;
+            color: var(--contrast);
         }
 
     }

@@ -62,10 +62,19 @@ table {
 
     th {
         font-size: 1.5rem;
+        text-align: center;
+        background-color: var(--primary);
+        border: 1px solid #ddd;
     }
 
     td {
         font-size: 1.3rem;
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .actions {
